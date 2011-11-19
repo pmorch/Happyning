@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8" />
-<title>Front page</title>
+	<meta charset="utf-8">
+	<title>Happyning</title>
 	<script src="jquery-1.7.min.js"></script>
 	<script src="json2.js"></script>
 	<script src="underscore-min.js"></script>
@@ -12,20 +12,57 @@
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
 	<script type="text/javascript">
 		$(function () {
-			$(":date").dateinput();
+			$("#date").dateinput();
+			$(".tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
+			var currentPage;
+			function selectPage(pageID) {
+					if (currentPage !== undefined) {
+						currentPage.hide();
+					}
+					var page = $('#' + pageID);
+					page.show();
+					currentPage=page;
+			}
+			var AppRouter = Backbone.Router.extend({
+				routes: {
+					"": "homePage",
+					"/selector": "selectorPage"
+				},
+				homePage: function () {
+					console.log("mePage", jQuery('#foobb').html());
+					selectPage('homePage');
+				},
+				selectorPage: function () {
+					console.log("selectorPage");
+					selectPage('selectorPage');
+				},
+			});
+			// Initiate the router
+			var app_router = new AppRouter;
+			// Start Backbone history a neccesary step for bookmarkable URL's
+			Backbone.history.start();
 		});
+
+
 	</script>
-
 </head>
-	<body>
-		<form action="demo_form.asp" method="get" autocomplete="on">
-			<label for="many">How many people?</label><input type="text" name="many" id="many" />
-			<label for="when">When?</label><input type="date" name="when"/>
-
-
-			<label for="where">Where</label><input id="autocomplete" /><a href="">Get current pace</a>
-			<p>Mood</p>
-			
-		</form>
-	</body>
+<body>
+	<div id="homePage" class="page">
+		<div style="margin-left=100px">
+			<span class="tooltipped">This has a tooltip</span>
+			<div class="tooltip">This is the tooltip</div>
+			-
+			<span class="tooltipped">This also has a tooltip</span>
+			<div class="tooltip">This is the 2nd tooltip</div>
+		</div>
+		<div><input id="date"/></div>
+		<a href="#/selector">2nd Page</a>
+	</div>
+	<div id="selectorPage" class="page">
+		2nd Page
+		<a href="#">First Page</a>
+	</div>
+</body>
 </html>
+
+
