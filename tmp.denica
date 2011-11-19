@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Front page</title>
+  <script src="jquery-1.7.min.js"></script>
+	<script src="json2.js"></script>
+	<script src="underscore-min.js"></script>
+	<script src="backbone-min.js"></script>
+	<script src="jquery.tools.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="dateinput.css"/>
+	<link rel="stylesheet" type="text/css" href="happyning.css"/>
+	<script type="text/javascript">
+		$(function () {
+			$('[type="date"]').dateinput();
+		});
+	</script>
+
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+    source: ["Albertslund", "Østerbro", "Vesterbro", "København K", "Brønshøj", "Frederiskberg", "Lyngby"]
+	
+});
+    $("input#what").autocomplete({
+    source: ["Birthday party", "Dinner party", "Tea party", "Christmas caroling party", "Reception", "Costume or fancy dress party", "Company party", "Surprise party", "Graduation party", "Housewarming party"]
+	
+});
+  });
+  </script>
+  <script type="text/javascript">
+		$(function () {
+		        $("#location_button").click(function() {
+		                // Show spinner...
+		                $("#location_button").html("<img src='spinner' height=20 border=0 />");
+		                setTimeout(function() {
+		                        $("#location_button").text("Get location");
+		                        $("#autocomplete").attr("value", "Howitzvej 60 1., 2000 Frederiksberg");
+		                }, 2500);
+		        });
+			$('[type="date"]').dateinput();
+		});
+	</script>
+  
+</head>
+	<body>
+		<form action="demo_form.asp" method="get" autocomplete="on">
+			<label for="many">How many people?</label><input type="text" name="many" id="many"  onclick="if (this.value !='') {this.value = '';}" />
+			<label for="many">What you want to do?</label><input type="text" name="what" id="what"  onclick="if (this.value !='') {this.value = '';}" />
+			<label for="when">When?</label><input type="date" id="date" name="when"  onclick="if (this.value !='') {this.value = '';}" />
+			<label for="budget">Price?</label><input type="budget" id="budget" name="budget"  onclick="if (this.value !='') {this.value = '';}"  />
+			<label for="where">Where</label><input id="autocomplete" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Get my location</a>
+			<p>Mood</p>
+			
+				<a id="download_now"><img src="black_arrow.png" /> </a>
+
+				<!-- tooltip element -->
+						<div class="tooltip">
+							<img src="black_arrow.png" />
+						</div>
+							<script>
+							$(document).ready(function() {
+							$("#download_now").tooltip({ effect: 'slide'});
+							});
+							</script>
+		</form>
+		
+		<p><a href="">I wanna bid page</a></p>
+	</body>
+</html>
