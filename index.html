@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>hello-backbonejs</title>
+	<script src="jquery-1.7.min.js"></script>
+	<script src="json2.js"></script>
+	<script src="underscore-min.js"></script>
+	<script src="backbone-min.js"></script>
+	<script src="jquery.tools.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="dateinput.css"/>
+	<link rel="stylesheet" type="text/css" href="happyning.css"/>
+	<script type="text/javascript">
+		$(function () {
+			$(":date").dateinput();
+		});
+	</script>
+</head>
+<body>
+	<span style="margin-left: 100px" id="tooltipped">this has a tooltip</span>
+	<div class="tooltip">This is the tooltip</div>
+	<script>
+		$("#tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
+	</script>
+	<input type="date"/>
+</body>
+</html>
+
+
