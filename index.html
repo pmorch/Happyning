@@ -8,15 +8,15 @@
 	<script src="underscore-min.js"></script>
 	<script src="backbone-min.js"></script>
 	<script src="jquery.tools.min.js"></script>
-	<script src="jquery-ui.min.js"></script>
+	<script src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script src='data.js'></script>
 	<script src='global.js'></script>
-	<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
-	<link rel="stylesheet" type="text/css" href="dateinput.css"/>
+	<script src="date_da.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery-ui/css/ui-darkness/jquery-ui-1.8.16.custom.css"/>
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
 	<script type="text/javascript">
 		$(function () {
-			$("#date").dateinput();
+			$("#date").datepicker($.datepicker.regional['da']);
 			$(".tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
 			var currentPage;
 			function selectPage(pageID) {
