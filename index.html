@@ -9,6 +9,8 @@
 	<script src="backbone-min.js"></script>
 	<script src="jquery.tools.min.js"></script>
 	<script src="jquery-ui.min.js"></script>
+	<script src='data.js'></script>
+	<script src='global.js'></script>
 	<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
 	<link rel="stylesheet" type="text/css" href="dateinput.css"/>
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
@@ -77,6 +79,9 @@
 					"Housewarming party"
 				]
 			});
+			SUPPLIERS.forEach(function(supplier) {
+				$('#overview').append(template('#template-supplier', supplier));
+			});
 		});
 
 	</script>
@@ -105,8 +110,17 @@
 		</div>
 		<div id="selectorPage" class="page">
 			<h2>Second Page</h2>
+			<p>This is the Second Page</p>
 			<a href="#">[Go to First Page ]</a>
-			<p>This is the Second Page</a>
+			<h3>Suppliers Overview</h3>
+			<script type='text/template' id='template-supplier'>
+				<div class='supplier'>
+					<div class='supplier-icon' style="background-image: url('{icon}');"></div>
+				</div>
+			</script>
+			<div id='overview'>
+			</div>
+			<div style="clear:both"></div>
 		</div>
 	</div>
 </body>
