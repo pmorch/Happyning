@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Happyning</title>
+	<script src="jquery-1.7.min.js"></script>
+	<script src="underscore-min.js"></script>
+	<script src="backbone-min.js"></script>
+	<script src="jquery.tools.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script src='data.js'></script>
+	<script src='global.js'></script>
+	<script src="date.js"></script>
+	<script src="datePicker.js"></script>
+	<script src="date_da.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+	<link rel="stylesheet" type="text/css" href="dateinput.css"/>
+	<link rel="stylesheet" type="text/css" href="happyning.css"/>
+	<script type="text/javascript">
+		$(function () {
+			$("#date").datepicker($.datepicker.regional['da']);
+			$(".tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
+			var currentPage;
+			function selectPage(pageID) {
+				console.log("Changing to page: " + pageID);
+				if (currentPage !== undefined) {
+					currentPage.hide();
+				}
+				var page = $('#' + pageID);
+				page.show();
+				currentPage=page;
+			}
+			var AppRouter = Backbone.Router.extend({
+				routes: {
+					"": "homePage",
+					"/selector": "selectorPage"
+				},
+				homePage: function () {
+					selectPage('homePage');
+				},
+				selectorPage: function () {
+					selectPage('selectorPage');
+				},
+			});
+			// Initiate the router
+			var app_router = new AppRouter;
+			// Start Backbone history a neccesary step for bookmarkable URL's
+			Backbone.history.start();
+
+			$("#location_button").click(function() {
+				// Show spinner...
+				$("#location_button").html("<img src='spinner.gif' height=20 border=0 />");
+				setTimeout(function() {
+					$("#location_button").text("Get location");
+					$("#autocomplete").attr("value", "Howitzvej 60 1., 2000 Frederiksberg");
+				}, 2500);
+			});
+
+			$("input#autocomplete").autocomplete({
+				source: [
+					"Albertslund",
+					"Østerbro",
+					"Vesterbro",
+					"København K",
+					"Brønshøj",
+					"Frederiskberg",
+					"Lyngby"
+				]
+			});
+			$("input#what").autocomplete({
+				source: [
+					"Birthday party",
+					"Dinner party",
+					"Tea party",
+					"Christmas caroling party",
+					"Reception",
+					"Costume or fancy dress party",
+					"Company party",
+					"Surprise party",
+					"Graduation party",
+					"Housewarming party"
+				]
+			});
+			SUPPLIERS.forEach(function(supplier) {
+				$('#overview').append(template('#template-supplier', supplier));
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<p>This is Happyning!</p>
+	<div id="innerContent">
+		<div id="homePage" class="page">
+			<h2>First Page</h2>
+			<a href="#/selector">[ Go to Second Page ]</a>
+			<p>
+				<input type="text" name="many" id="many"  value="How many people?" onclick="if (this.value !='') {this.value = '';}" /> <br>
+				<input type="text" name="what" id="what" value="What you want to do?" onclick="if (this.value !='') {this.value = '';}" /> <br>
+				<input type="date" id="date" name="when" value="When?" onclick="if (this.value !='') {this.value = '';}" /> <br>
+				<input type="budget" id="budget" value="Price?" name="budget"  onclick="if (this.value !='') {this.value = '';}"  /> <br>
+				<label for="where"></label><input id="autocomplete" value="Where" onclick="if (this.value !='') {this.value = '';}" /><div class="locationButton" href="#" id="location_button">Get my location</div> <br>
+			</p>
+			<div style="margin-left=100px">
+				<span class="tooltipped">This has a tooltip</span>
+				<div class="tooltip">This is the tooltip</div>
+				-
+				<span class="tooltipped">This also has a tooltip</span>
+				<div class="tooltip">This is the Second tooltip</div>
+			</div>
+			<div><input id="date"/></div>
+		</div>
+		<div id="selectorPage" class="page">
+			<h2>Second Page</h2>
+			<p>This is the Second Page</p>
+			<a href="#">[Go to First Page ]</a>
+			<h3>Suppliers Overview</h3>
+			<script type='text/template' id='template-supplier'>
+				<div class='supplier'>
+					<div class='supplier-icon' style="background-image: url('{icon}');"></div>
+				</div>
+			</script>
+			<div id='overview'>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+	</div>
+</body>
+</html>
