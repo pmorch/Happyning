@@ -56,7 +56,7 @@
 			<label for="where">Where</label><input id="autocomplete" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Get my location</a>
 			<p>Mood</p>
 			
-				<a id="download_now"><img src="bullet square blue.bmp" /> </a>
+				<a id="download_now"><img src="black_arrow.png" /> </a>
 
 				<!-- tooltip element -->
 						<div class="tooltip">
