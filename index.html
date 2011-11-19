@@ -12,6 +12,14 @@
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
 	<script type="text/javascript">
 		$(function () {
+                        $("#location_button").click(function() {
+                                // Show spinner...
+                                $("#location_button").text("loading...");
+                                setTimeout(function() {
+                                        $("#autocomplete").attr("value", "Howitzvej 60 1., 2000 Frederiksberg");
+                                }, 2500);
+                                $("#location_button").text("Get location");
+                        });
 			$('[type="date"]').dateinput();
 		});
 	</script>
@@ -35,7 +43,7 @@
 			<label for="many">How many people?</label><input type="text" name="many" id="many" />
 			<label for="many">What you want to do?</label><input type="text" name="what" id="what" />
 			<label for="when">When?</label><input type="date" id="date" name="when"/>
-			<label for="where">Where</label><input id="autocomplete" /><a href="">Get current pace</a>
+			<label for="where">Where</label><input id="autocomplete" /><a class="locationButton" href="#" id="location_button">Get location</a>
 			<p>Mood</p>
 			
 				<a id="download_now"><img src="black_arrow.png" /></a>
