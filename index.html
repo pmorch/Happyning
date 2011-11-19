@@ -11,12 +11,15 @@
 	<script src="jquery-ui.min.js"></script>
 	<script src='data.js'></script>
 	<script src='global.js'></script>
+	<script src="date.js"></script>
+	<script src="datePicker.js"></script>
+	<script src="date_da.js"></script>
 	<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
 	<link rel="stylesheet" type="text/css" href="dateinput.css"/>
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
 	<script type="text/javascript">
 		$(function () {
-			$("#date").dateinput();
+			$("#date").datepicker($.datepicker.regional['da']);
 			$(".tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
 			var currentPage;
 			function selectPage(pageID) {
