@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	<script src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script src='global.js'></script>
@@ -30,19 +31,21 @@
 	</style>
 	<script>
 		$(function() {
-			$('.activities').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
-			$('.activities').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
-			$('.activities').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
-			$('.eatings').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
-			$('.eatings').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
-			$('.eatings').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
-			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
-			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
-			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
-			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
-			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
-			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
-			$('.misc').append(template('#template-box-transport', {name:'Bus (Waiting for confirmation)'}));			
+			['Bowling', 'Rodeo tyr', 'Paintball'].forEach(function(name) {
+				$('.activities').append(template('#template-box', {style:'activity', name:name}));						
+			});
+
+			['Indisk', 'Italiensk', 'Fransk', 'Tysk'].forEach(function(name) {
+				$('.eatings').append(template('#template-box', {style:'eating', name:name}));						
+			});
+
+			['Bar', 'Natklub'].forEach(function(name) {
+				$('.partys').append(template('#template-box', {style:'party', name:name}));						
+			});
+
+			['Rengøring', 'Bus', 'Catering'].forEach(function(name) {
+				$('.misc').append(template('#template-box', {style:'transport', name:name}));			
+			});
 	
 			timeline.update();
 		});
@@ -52,19 +55,6 @@
 	<script type='text/template' id='template-box'>
 		<div class='dndable' draggable='true'>
 			<div class='box {style}'>
-				<div class='icon'>
-				</div>
-				<div class='text'>
-					<div class='header'>{type}</div>
-					<div class='bottom'>{name}</div>
-				</div>
-				<div style='clear:both'></div>
-			</div>
-		</div>
-	</script>
-	<script type='text/template' id='template-box-transport'>
-		<div class='dndable' draggable='true'>
-			<div class='box transport'>
 				<div class='icon'></div>
 				<div class='header'>{name}</div>
 				<div style='clear:both'></div>
@@ -77,34 +67,22 @@
 		<div class="droparea">
 			<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 9px; left: 176px; width: 188px; height: 50px; ">
 				<div class="box activity">
-					<div class="icon">
-					</div>
-					<div class="text">
-						<div class="header">Activity (Pending)</div>
-						<div class="bottom">Bowling</div>
-					</div>
+					<div class="icon"></div>
+					<div class="header">Bowling</div>
 					<div style="clear:both"></div>
 				</div>
 				<div class="close">x</div>
 			<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; width: 181px; height: 50px; top: 9px; left: 424px; ">
 				<div class="box eating">
-					<div class="icon">
-					</div>
-					<div class="text">
-						<div class="header">Eating (Pending)</div>
-						<div class="bottom">Foo</div>
-					</div>
+					<div class="icon"></div>
+					<div class="header">Italiensk</div>
 					<div style="clear:both"></div>
 				</div>
 				<div class="close">x</div>
 			<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 9px; width: 274px; height: 50px; left: 676px; ">
 				<div class="box party">
-					<div class="icon">
-					</div>
-					<div class="text">
-						<div class="header">Party (Pending)</div>
-						<div class="bottom">Dance!</div>
-					</div>
+					<div class="icon"></div>
+					<div class="header">Bar</div>
 					<div style="clear:both"></div>
 				</div>
 				<div class="close">x</div>
@@ -114,7 +92,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 71px; width: 363px; left: 337px; ">
 			<div class="box transport">
 				<div class="icon"></div>
-				<div class="header">Bus (Waiting for confirmation)</div>
+				<div class="header">Bus</div>
 				<div style="clear:both"></div>
 			</div>
 			<div class="close">x</div>
