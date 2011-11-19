@@ -1,5 +1,6 @@
 .ui-widget-content {
 	border: none !important;
+	background: none !important;
 }
 .box.activity {
 	background-image: -webkit-linear-gradient(top, #00b2e3 12%, #0095cb 66%);
@@ -23,6 +24,7 @@
 	padding-top: 5px;
 }
 .box {
+	color: black;
 	font-family: Arial, 'Lucida Grande';
 	font-size: 12px;
 	border-radius: 3px;
