@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title></title>
+	<script src='global.js'></script>
+	<script src='jQuery-1.7.min.js'></script>
+	<style>
+		.box.activity {
+			background-image: -webkit-linear-gradient(top, #00b2e3 12%, #0095cb 66%);
+			border: 1px solid #17A7CF;			
+		}
+		.box.eating {
+			background-image: -webkit-linear-gradient(top, #d5fa02 12%, #acd60b 66%);
+			border: 1px solid #BAEA0B;			
+		}
+		.box.party {
+			background-image: -webkit-linear-gradient(top, #febf24 12%, #eb9517 66%);
+			border: 1px solid #D49902;			
+		}
+		.box .header {
+			float: left;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.box .bottom {
+			color: #111;
+			padding-top: 5px;
+		}
+		.box {
+			float: left;
+			font-family: Arial, 'Lucida Grande';
+			font-size: 12px;
+			border-radius: 3px;
+			padding:10px;
+		}
+		.box .icon {
+			float: left;
+			width: 16px;
+			height: 18px;
+			margin-top: 7px;
+			margin-left:2px;
+			margin-right:4px;
+			background-image: url('Icon.Pending.png');
+		}
+		.box .text {
+			float: left;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		.box.transport {
+			background-image: url('diagonal-noise.png');
+			border: 1px solid #ccc;
+		}
+
+		.box.transport .header {
+			margin-top: 8px;
+			margin-left: 7px;
+			margin-bottom: 6px;
+		}
+
+		.box {
+			margin: 10px;
+		}
+	</style>
+	<script>
+		$(function() {
+			$('#foo').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
+			$('#foo').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
+			$('#foo').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('#foo').append(template('#template-box-transport', {name:'Bus (Waiting for confirmation)'}));			
+		});
+	</script>
+</head>
+<body>
+	<script type='text/template' id='template-box'>
+		<div class='box {style}'>
+			<div class='icon'>
+			</div>
+			<div class='text'>
+				<div class='header'>{type}</div>
+				<div class='bottom'>{name}</div>
+			</div>
+		</div>
+	</script>
+	<script type='text/template' id='template-box-transport'>
+		<div class='box transport'>
+			<div class='icon'></div>
+			<div class='header'>{name}</div>
+		</div>
+	</script>
+	<div id='foo'></div>
+</body>
+</html>
