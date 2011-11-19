@@ -1,0 +1,139 @@
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script src='global.js'></script>
+	<script src="js/timeline.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css"/>
+	<link rel="stylesheet" type="text/css" href="css/timeline.css"/>
+	<link rel="stylesheet" type="text/css" href="css/box.css"/>
+
+	<style>
+		#foo > div {
+			margin:10px;
+		}
+
+		.lst {
+			margin-right: 20px;
+			float: left;
+			width: 220px;
+		}
+		.lst > div {
+			margin: 10px 0;
+		}
+
+		.misc {
+			width: 280px;
+		}
+
+	</style>
+	<script>
+		$(function() {
+			$('.activities').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
+			$('.activities').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
+			$('.activities').append(template('#template-box', {style:'activity', type:'Activity (Pending)', name:'Bowling'}));			
+			$('.eatings').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
+			$('.eatings').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
+			$('.eatings').append(template('#template-box', {style:'eating', type:'Eating (Pending)', name:'Foo'}));			
+			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('.partys').append(template('#template-box', {style:'party', type:'Party (Pending)', name:'Dance!'}));			
+			$('.misc').append(template('#template-box-transport', {name:'Bus (Waiting for confirmation)'}));			
+	
+			timeline.update();
+		});
+	</script>
+</head>
+<body>
+	<script type='text/template' id='template-box'>
+		<div class='dndable' draggable='true'>
+			<div class='box {style}'>
+				<div class='icon'>
+				</div>
+				<div class='text'>
+					<div class='header'>{type}</div>
+					<div class='bottom'>{name}</div>
+				</div>
+				<div style='clear:both'></div>
+			</div>
+		</div>
+	</script>
+	<script type='text/template' id='template-box-transport'>
+		<div class='dndable' draggable='true'>
+			<div class='box transport'>
+				<div class='icon'></div>
+				<div class='header'>{name}</div>
+				<div style='clear:both'></div>
+			</div>
+		</div>
+	</script>
+
+	<div class="timeline">
+		<div class="timepickerDiv"></div>
+		<div class="droparea">
+			<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 9px; left: 176px; width: 188px; height: 50px; ">
+				<div class="box activity">
+					<div class="icon">
+					</div>
+					<div class="text">
+						<div class="header">Activity (Pending)</div>
+						<div class="bottom">Bowling</div>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+				<div class="close">x</div>
+			<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; width: 181px; height: 50px; top: 9px; left: 424px; ">
+				<div class="box eating">
+					<div class="icon">
+					</div>
+					<div class="text">
+						<div class="header">Eating (Pending)</div>
+						<div class="bottom">Foo</div>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+				<div class="close">x</div>
+			<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 9px; width: 274px; height: 50px; left: 676px; ">
+				<div class="box party">
+					<div class="icon">
+					</div>
+					<div class="text">
+						<div class="header">Party (Pending)</div>
+						<div class="bottom">Dance!</div>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+				<div class="close">x</div>
+			<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div>
+		</div>
+		<div class="droparea">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 71px; width: 363px; left: 337px; ">
+			<div class="box transport">
+				<div class="icon"></div>
+				<div class="header">Bus (Waiting for confirmation)</div>
+				<div style="clear:both"></div>
+			</div>
+			<div class="close">x</div>
+		<div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div>
+		</div>
+		<div class="timelineTime"></div>
+	</div>
+	
+	<br>
+
+	<div class='lst activities'></div>
+	<div class='lst eatings'></div>
+	<div class='lst partys'></div>
+	<div class='lst misc'></div>
+
+	<div id='foo' style='width:500px'></div>
+
+	<script>
+		timeline.init();
+	</script>
+</body>
+</html>

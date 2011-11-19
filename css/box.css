@@ -1,0 +1,56 @@
+.ui-widget-content {
+	border: none !important;
+}
+.box.activity {
+	background-image: -webkit-linear-gradient(top, #00b2e3 12%, #0095cb 66%);
+	border: 1px solid #17A7CF;			
+}
+.box.eating {
+	background-image: -webkit-linear-gradient(top, #d5fa02 12%, #acd60b 66%);
+	border: 1px solid #BAEA0B;			
+}
+.box.party {
+	background-image: -webkit-linear-gradient(top, #febf24 12%, #eb9517 66%);
+	border: 1px solid #D49902;			
+}
+.box .header {
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+}
+.box .bottom {
+	color: #111;
+	padding-top: 5px;
+}
+.box {
+	font-family: Arial, 'Lucida Grande';
+	font-size: 12px;
+	border-radius: 3px;
+	padding:10px;
+}
+.box .icon {
+	float: left;
+	width: 16px;
+	height: 18px;
+	margin-top: 7px;
+	margin-left:2px;
+	margin-right:4px;
+	background-image: url('../Icon.Pending.png');
+}
+.box .text {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.box.transport {
+	background-image: url('../diagonal-noise.png');
+	border: 1px solid #ccc;
+}
+
+.box.transport .header {
+	margin-top: 8px;
+	margin-left: 7px;
+	margin-bottom: 6px;
+}
+

@@ -1,0 +1,56 @@
+.dndable{
+	cursor: move;
+}
+.droparea{
+	width: 860px;
+	height: 62px;
+	background: #F7F7F7;
+	float:left;
+}
+
+/*hovering over elements*/
+.over{
+	background: #EBEBEB;
+}
+
+/*dropped items*/
+.droppedItem{
+	display: inline-block;
+	width: 230px;
+	min-width: 200px;
+	margin: 5px;
+}
+
+.timeline{
+	width: 1000px;
+	height: 140px;
+	border: 1px solid #cccccc;
+}
+.timepickerDiv{
+	width: 139px;
+	height: 100%;
+	background: f6f6f6;
+	border-right: 1px solid #cccccc;
+	float:left;
+	background-image: url('../img/datePickerImg.png');
+	background-repeat: no-repeat;
+	background-position:center; 
+}
+.timelineTime{
+	background-image: url('../timeline.png');
+	width: 860px;
+	height: 16px;
+	float:left;
+}
+.close{
+	font-family: arial;
+	 display: inline-block;
+	 font-size: 10px;
+	 float: right;
+	 margin-top:-43px;
+	 margin-right:5px;
+	width: 10px;
+	text-align: center;
+	cursor: pointer;
+ color: gray;
+}
