@@ -1,6 +1,7 @@
 /* Style for the tool tip! */
 .tooltip {
 	display:none;
+	background:transparent url(black_arrow_up.png);
 	font-size:12px;
 	height:70px;
 	width:160px;
@@ -11,4 +12,13 @@
 
 .page {
 	display: none;
+}
+
+body {
+	background: #eee;
+}
+
+#innerContent {
+	padding: 5px;
+	background: #fff;
 }
