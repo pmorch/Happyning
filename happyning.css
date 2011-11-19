@@ -1,13 +1,32 @@
 /* Style for the tool tip! */
-.tooltip {
-	display:none;
-	background:transparent url(black_arrow_up.png);
-	font-size:12px;
-	height:70px;
-	width:160px;
-	padding:25px;
-	margin: 10px;
-	color:#fff;	
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	font-family: 'Abel', Arial, Verdana, Helvetica, sans-serif;
+	color: #4a4a4a;
+	font-size: 14px;
+	line-height: 2em;
+}
+a {
+	text-decoration: none;
+	color:#55adda;
+}
+input, textarea {
+	background: #ffffff;
+	color: #9a9a9c;
+	font-size: 1em;
+	font-family:  Arial, Helvetica, sans-serif;
+	border-radius: 10px 5px;
+	margin-left: 10px;
+	margin-top: 24px;
+	float: left;
+	height: 30px;
+	width: 80px;
+}
+input:hover, input:click {
+	border-color: #000000;
 }
 
 .page {
@@ -15,14 +34,56 @@
 }
 
 body {
-	background: #eee;
+	background: #ffff;
 }
-
-#innerContent {
-	padding: 5px;
-	background: #fff;
+#container {
+	position: relative;
+	min-height: 100%;
+	_height: 100%;
+	margin: auto;
 }
-
+header{
+	height: 82px;
+}
+header p{
+	padding-top: 30px;
+	color:#67707c;
+} 
+header a{
+	
+} 
+nav{
+	height: 76px;
+	background-color: #000000;
+	border-top-left-radius: 20px 15px;
+	border-top-right-radius: 20px 15px;
+} 
+nav p{
+	float: left;
+	margin-top: 25px;
+	margin-left: 20px;
+	font-size: 25px;
+	color: #cbcbcb;
+}
+.find img{
+	margin-top: 15px;
+	margin-left: 18px;
+	
+}
+.locationButton{
+	float: left;
+	padding-top: 27px;
+	padding-left: 10px;
+}
+.innerContent{
+	width: 978px;
+	position: relative;
+	margin: auto;
+}
+.logo{
+	float: left;
+	margin-left: 10px;
+}
 .supplier {
 	padding: 10px;
 	float: left;
@@ -33,4 +94,29 @@ body {
 	height: 150px;
 	background-position: 50% 25%;
 	background-size: cover;
+}
+.tools{
+	background-color: #cccccc;
+	color: #383838;
+	height: 55px;
+	border-bottom-left-radius: 20px 15px;
+	border-bottom-right-radius: 20px 15px;
+	margin-top: -10px;
+	margin-left: 1px;
+	padding-top: 20px;
+}
+
+.tooltip {
+	display:none;
+	background:transparent url(black_arrow_up.png);
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	margin: 10px;
+	color:#fff;	
+}
+.tooltipped{
+	margin-left: 20px;
+	font-weight: bold;
 }

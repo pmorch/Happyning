@@ -87,40 +87,62 @@
 	</script>
 </head>
 <body>
-	<p>This is Happyning!</p>
-	<div id="innerContent">
-		<div id="homePage" class="page">
-			<h2>First Page</h2>
-			<a href="#/selector">[ Go to Second Page ]</a>
-			<p>
-				<input type="text" name="many" id="many"  value="How many people?" onclick="if (this.value !='') {this.value = '';}" /> <br>
-				<input type="text" name="what" id="what" value="What you want to do?" onclick="if (this.value !='') {this.value = '';}" /> <br>
-				<input type="date" id="date" name="when" value="When?" onclick="if (this.value !='') {this.value = '';}" /> <br>
-				<input type="budget" id="budget" value="Price?" name="budget"  onclick="if (this.value !='') {this.value = '';}"  /> <br>
-				<label for="where"></label><input id="autocomplete" value="Where" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Get my location</a> <br>
-			</p>
-			<div style="margin-left=100px">
-				<span class="tooltipped">This has a tooltip</span>
-				<div class="tooltip">This is the tooltip</div>
-				-
-				<span class="tooltipped">This also has a tooltip</span>
-				<div class="tooltip">This is the Second tooltip</div>
-			</div>
-			<div><input id="date"/></div>
-		</div>
-		<div id="selectorPage" class="page">
-			<h2>Second Page</h2>
-			<p>This is the Second Page</p>
-			<a href="#">[Go to First Page ]</a>
-			<h3>Suppliers Overview</h3>
-			<script type='text/template' id='template-supplier'>
-				<div class='supplier'>
-					<div class='supplier-icon' style="background-image: url('{icon}');"></div>
+	<div id="container">
+		<div class="innerContent">
+			<header>
+				<a  href="#"><img src="img/logo.png" class="logo" /></a>
+				<p>Hello, Jacob!<a href="#"> (Sign out)</a></p>
+			</header>
+			<div id="homePage" class="page">			
+				<nav>
+					<p>Plan an event: </p>
+						<input class type="text" name="many" id="many"  value="Attends" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input type="text" name="what" id="what" value="What" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input type="date" id="date" name="when" value="When?" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input type="budget" id="budget" value="Budget?" name="budget"  onclick="if (this.value !='') {this.value = '';}"  /> 
+						<label for="where"></label><input id="autocomplete" value="Where?" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Find me</a>
+						<a href="#/selector" class="find" ><img src="img/find.png"></a>
+				</nav>
+				<img src="img/main.png" />
+				<div class="tools" >
+					<span class="tooltipped">Vintage</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Rock star</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Nature</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Girl night</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Adventure</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Ecological</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Culinary trip</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Team bounding</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Noughty</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Toataly wired</span>
+					<div class="tooltip"></div>
 				</div>
-			</script>
-			<div id='overview'>
+				
 			</div>
-			<div style="clear:both"></div>
+			
+			<div id="selectorPage" class="page">
+				<h2>Second Page</h2>
+				<p>This is the Second Page</p>
+				<a href="#">Find </a>
+				<h3>Suppliers Overview</h3>
+				<script type='text/template' id='template-supplier'>
+					<div class='supplier'>
+						<div class='supplier-icon' style="background-image: url('{icon}');"></div>
+					</div>
+				</script>
+				<div id='overview'>
+				</div>
+				<div style="clear:both"></div>
+			</div>
 		</div>
 	</div>
 </body>
