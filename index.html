@@ -175,7 +175,7 @@ console.log("foo");
 					var counter = 0;
 					var arr = [ "0", "2", "2", "5", "5", "4", "4", "2", "2", "5", "5", "4", "4", "3","3","3" ];
 					$('.droparea').children().each( function(){
-					 $(this).append('<div class="offer">' + arr[counter] + '</div>');
+					 $(this).append('<div class="offer">' + (arr[counter] || ((Math.random() * 5) | 0)+1) + '</div>');
 					 counter++;
 					});
     
@@ -351,7 +351,6 @@ console.log("foo");
 				<div class="timelineTime"></div>
 			</div>
 			
-			<br>
 			<h1 class='headline'>Customization</h1>
 
 			<div class='headers'>
@@ -388,28 +387,18 @@ console.log("foo");
 					
 		<div id="waitingPage" class="page">
 			<img src='img/main-cropped.png'>
-			<div class="tools">
-				<span class="tooltipped">Vintage</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Rock star</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Nature</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Girl night</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Adventure</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Ecological</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Culinary trip</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Team bounding</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Noughty</span>
-				<div class="tooltip"></div>
-				<span class="tooltipped">Toataly wired</span>
-				<div class="tooltip"></div>
-			</div>
+				<div class="tools" >
+					<span class="tooltipped">Vintage</span>
+					<span class="tooltipped">Rock star</span>
+					<span class="tooltipped">Nature</span>
+					<span class="tooltipped">Girl night</span>
+					<span class="tooltipped">Adventure</span>
+					<span class="tooltipped">Ecological</span>
+					<span class="tooltipped">Noughty</span>
+					<span class="tooltipped">Toataly wired</span>
+					<span class="tooltipped">Budget</span>
+					<span class="tooltipped">Guide tour</span>
+				</div>
 
 							<h1 class='headline'>Events timeline</h1>
 
