@@ -18,6 +18,19 @@
 	<link rel="stylesheet" type="text/css" href="css/timeline.css"/>
 	<link rel="stylesheet" type="text/css" href="css/box.css"/>
 
+	<style>
+		.headers div {
+			color: #999;
+			margin-left: 38px;
+			font-weight: bold;
+			width: 210px;
+			float: left;
+		}
+		.headers div.last {
+			width: 100px;
+		}
+	</style>
+
 	<script type="text/javascript">
 		$(function () {
 			$("#date").datepicker($.datepicker.regional['da']);
@@ -200,7 +213,7 @@
 					</div>
 				</script>
 
-			<div class="timeline" id='select-timeline'>
+				<div class="timeline" id='select-timeline'>
 				<div class="timepickerDiv"></div>
 				<div class="droparea ui-droppable">
 
@@ -242,6 +255,24 @@
 			</div>
 			
 			<br>
+
+			<div class='headers'>
+				<div>
+					Activities:
+				</div>
+				<div>
+					Eating:
+				</div>
+				<div>
+					Staff:
+				</div>
+				<div class='last'>
+					Venues:
+				</div>
+
+			</div>
+
+			<div style='clear:both'></div> 
 
 			<div class='lst activities'></div>
 			<div class='lst eatings'></div>
