@@ -1,3 +1,8 @@
+function toggleBid(bidID) {
+	var $details = $('#bidDetails' + bidID);
+	// var $img = $('#expandImg' + imgID);
+	$details.toggle('slow');
+}
 window.template = function (selector, col) {
 	var str = $(selector).html() || $(selector).text();
 

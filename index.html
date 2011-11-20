@@ -17,6 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
 	<link rel="stylesheet" type="text/css" href="css/timeline.css"/>
 	<link rel="stylesheet" type="text/css" href="css/box.css"/>
+	<script src="star-rating/jquery.rating.js"></script>
+	<link rel="stylesheet" type="text/css" href="star-rating/jquery.rating.css"/>
 
 	<style>
 		.headers div {
@@ -130,8 +132,68 @@
 			SUPPLIERS.forEach(function(supplier) {
 				$('#overview').append(template('#template-supplier', supplier));
 			});
-		});
+			var allBids = [
+				{
+					'category' : 'Thai Restaurant',
+					'bids' : [
+						{
+							'name' : "Thai Super",
+							'rating' : 4,
+							'price' : "kr. 10.000",
+							'url' : 'http://www.google.com',
+						},
+						{
+							'name' : "Flyvefisken",
+							'rating' : 3,
+							'price' : "kr. 12.000",
+							'url' : 'http://www.google.com',
+						}
+					]
+				},
+				{
+					'category' : 'Aktiviteter',
+					'bids' : [
+						{
+							'name' : "Go Cart Ballerup",
+							'rating' : 4,
+							'price' : "kr. 10.000",
+							'url' : 'http://www.google.com',
+						},
+						{
+							'name' : "Rodeo Bull",
+							'rating' : 2,
+							'price' : "kr. 12.000",
+							'url' : 'http://www.google.com',
+						}
+					]
+				},
 
+			];
+			var allBidsStr = '';
+			var bidNr=0;
+			allBids.forEach(function(category) {
+				var rows = '';
+				category.bids.forEach(function (bid) {
+					bid.bidID = bidNr;
+					rows += template('#bidRow', bid);
+					bidNr++;
+				});
+				allBidsStr += template('#bidTable', {
+					'category' : category.category,
+					'rows' : rows
+				});
+			});
+			$('#allBids').html(allBidsStr);
+			console.log("hello");
+			$('.ratingTD').each(function(index, td) {
+				var $td = $(td);
+				var rating = $td.text();
+				var ratingName = 'ratingNr' + index;
+				$td.html(template('#ratingTemplate', { 'name' : ratingName }));
+				$("input.star[name='" + ratingName + "']")
+					.rating().rating('select', parseInt(rating)).rating('disable');
+			});
+		});
 	</script>
 </head>
 <body>
@@ -313,6 +375,35 @@
 				<div class="tooltip"></div>
 			</div>
 			<div id='waiting-timeline' class='timeline'></div>
+			<h1>Bud</h1>	
+			<script type="text/template" id="bidTable">
+				<h2>{category}</h2>
+				<table>
+				{rows}
+				</table>
+			</script>
+			<script type="text/template" id="bidRow">
+				<tr>
+					<td>{name}</td>
+					<td class="ratingTD">{rating}</td>
+					<td>{price}</td>
+					<td>
+						<img style="border=0" src="toggleBid.png" class="expandImg" id="expandImg{bidID}" onclick="toggleBid({bidID})"></img>
+					</td>
+					<td>{accept}</td>
+				</tr>
+				<tr id="bidDetails{bidID}" class="bidDetails">
+					<td colspan="5">Details for this bid</td>
+				</tr>
+			</script>
+			<script type="text/template" id="ratingTemplate">
+				<input name="{name}" type="radio" class="star"/>
+				<input name="{name}" type="radio" class="star"/>
+				<input name="{name}" type="radio" class="star"/>
+				<input name="{name}" type="radio" class="star"/>
+				<input name="{name}" type="radio" class="star"/>
+			</script>
+			<div id="allBids" id="innerContent"></div>
 
 		</div>
 						

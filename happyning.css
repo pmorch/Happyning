@@ -133,3 +133,6 @@ nav p{
 .misc {
 	margin-right: 0;
 }
+.bidDetails {
+	display: none;
+}
