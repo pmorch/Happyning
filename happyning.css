@@ -142,13 +142,12 @@ nav p{
 .tooltipped{
 	float: left;
 	display: block;
-	margin-left: 25px;
 	font-weight: bold;
-	height: 30px;
+	padding: 16px 16px;
 }
+.tooltipped.checked, 
 .tooltipped:hover{
 	background-color: #999999;
-
 }
 
 .lst {
