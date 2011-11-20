@@ -4,7 +4,7 @@
 	padding: 0;
 }
 html, body {
-	font-family: 'Abel', Arial, Verdana, Helvetica, sans-serif;
+	font-family: 'Abel', Helvetica, 'Lucida Grande', Verdana, Arial, sans-serif;
 	color: #4a4a4a;
 	font-size: 14px;
 }
@@ -142,13 +142,12 @@ nav p{
 .tooltipped{
 	float: left;
 	display: block;
-	margin-left: 25px;
 	font-weight: bold;
-	height: 30px;
+	padding: 16px 16px;
 }
+.tooltipped.checked, 
 .tooltipped:hover{
 	background-color: #999999;
-
 }
 
 h1.headline {
