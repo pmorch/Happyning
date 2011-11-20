@@ -35,7 +35,8 @@
 			var AppRouter = Backbone.Router.extend({
 				routes: {
 					"": "homePage",
-					"/selector": "selectorPage"
+					"/selector": "selectorPage",
+					'/waiting': 'waitingPage'
 				},
 				homePage: function () {
 					selectPage('homePage');
@@ -63,8 +64,16 @@
 						timeline.init();
 						timeline.update();
 					});
-
 				},
+				waitingPage: function() {
+					selectPage('waitingPage');
+				
+					$('#waiting-timeline').html($('#select-timeline').html());	
+
+					$('#waiting-timeline .box').each(function(i, el) {
+						$(el).parent().css('top', parseInt($(el).parent().css('top')) - 150);
+					});
+				}
 			});
 			// Initiate the router
 			var app_router = new AppRouter;
@@ -181,66 +190,79 @@
 					<div class="tooltip"></div>
 				</div>
 
-	<script type='text/template' id='template-box'>
-		<div class='dndable' draggable='true'>
-			<div class='box {style}'>
-				<div class='icon'></div>
-				<div class='header'>{name}</div>
-				<div style='clear:both'></div>
+				<script type='text/template' id='template-box'>
+					<div class='dndable' draggable='true'>
+						<div class='box {style}'>
+							<div class='icon'></div>
+							<div class='header'>{name}</div>
+							<div style='clear:both'></div>
+						</div>
+					</div>
+				</script>
+
+			<div class="timeline" id='select-timeline'>
+				<div class="timepickerDiv"></div>
+				<div class="droparea ui-droppable">
+
+
+				<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 337px; width: 144px; left: 163px; ">
+					<div class="box activity">
+						<div class="icon"></div>
+						<div class="header">Bowling</div>
+						<div style="clear:both"></div>
+					</div>
+				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 337px; width: 160px; left: 493px; ">
+					<div class="box eating">
+						<div class="icon"></div>
+						<div class="header">Indisk</div>
+						<div style="clear:both"></div>
+					</div>
+				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 337px; width: 122px; left: 713px; ">
+					<div class="box party">
+						<div class="icon"></div>
+						<div class="header">Bar</div>
+						<div style="clear:both"></div>
+					</div>
+				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div></div>
+				
+				
+				<div class="droparea ui-droppable">
+
+
+				<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 399px; left: 295px; width: 439px; ">
+					<div class="box transport">
+						<div class="icon"></div>
+						<div class="header">Bus</div>
+						<div style="clear:both"></div>
+					</div>
+				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div></div>
+
+
+				<div class="timelineTime"></div>
 			</div>
+			
+			<br>
+
+			<div class='lst activities'></div>
+			<div class='lst eatings'></div>
+			<div class='lst partys'></div>
+			<div class='lst misc'></div>
+
+			<div style='clear:both'>
+				<a href='#/waiting'>gogogo</a>
+			</div>
+		<div>
 		</div>
-	</script>
 
-	<div class="timeline">
-		<div class="timepickerDiv"></div>
-		<div class="droparea">
+					</div>
+					
+					
+		<div id="waitingPage" class="page">
 
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 375px; width: 148px; left: 688px; ">
-			<div class="box party">
-				<div class="icon"></div>
-				<div class="header">Bar</div>
-				<div style="clear:both"></div>
-			</div>
-		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 375px; width: 123px; left: 484px; ">
-			<div class="box eating">
-				<div class="icon"></div>
-				<div class="header">Indisk</div>
-				<div style="clear:both"></div>
-			</div>
-		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 375px; width: 126px; left: 165px; ">
-			<div class="box activity">
-				<div class="icon"></div>
-				<div class="header">Bowling</div>
-				<div style="clear:both"></div>
-			</div>
-		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div>
-
+			<div id='waiting-timeline' class='timeline'></div>
 
 		</div>
-		<div class="droparea">
-
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 437px; left: 277px; width: 413px; ">
-			<div class="box transport">
-				<div class="icon"></div>
-				<div class="header">Bus</div>
-				<div style="clear:both"></div>
-			</div>
-		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div>
-
-
-		</div>
-		<div class="timelineTime"></div>
-	</div>
-	
-	<br>
-
-	<div class='lst activities'></div>
-	<div class='lst eatings'></div>
-	<div class='lst partys'></div>
-	<div class='lst misc'></div>
-
-
-			</div>	
+						
 		</div>
 	</div>
 </body>
