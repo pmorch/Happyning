@@ -39,6 +39,7 @@ input:hover, input:focus {
  .date{
   background-image: url('img/Calenda.png');
   overflow: hidden;
+	width: 70px;
  }
  .budget{
   background-image: url('img/money.png');

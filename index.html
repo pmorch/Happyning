@@ -211,7 +211,7 @@ console.log("foo");
 					"Fødselsdag",
 					"Middagsselskab",
 					"Teselskab",
-					"Julefrokost",
+					"Julearrangement",
 					"Reception",
 					"Kostumebal",
 					"Firmafest",
@@ -236,11 +236,11 @@ console.log("foo");
 			</header>
 				<nav>
 					<p>Planlæg et event: </p>
-						<input class="people infield" type="text" name="many" id="many"  placeholder="Antal" /> 
-						<input class="what infield" type="text" name="what" id="what" placeholder="Hvad"/> 
+						<input class="people infield" type="text" name="many" id="many"  placeholder="Antal" onclick="this.value='90'"/> 
+						<input class="what infield" type="text" name="what" id="what" placeholder="Hvad" onclick="this.value='J'; $(this).trigger('keydown');"/> 
 						<input class="date infield" type="text" id="date" name="when" placeholder="Hvornår?"/> 
-						<input class="budget infield" type="budget" id="budget" placeholder="Budget?"/> 
-						<label for="where"></label><input class="where infield" id="autocomplete" placeholder="Hvor?"/>
+						<input class="budget infield" type="budget" id="budget" placeholder="Budget?" onclick="this.value='kr. 60.000'"/> 
+						<label for="where"></label><input class="where infield" id="autocomplete" placeholder="Hvor?" onclick="this.value='K'; $(this).trigger('keydown');"/>
 						<a href="#/selector" class="find" ><img src="img/find.png"></a>
 				</nav>
 
