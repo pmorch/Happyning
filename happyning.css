@@ -64,6 +64,9 @@ body {
 	_height: 100%;
 	margin: auto;
 }
+.tools a {
+	color: #383838 !important;
+}
 header{
 	height: 82px;
 }
@@ -148,11 +151,7 @@ nav p{
 }
 .tooltipped:hover{
 	background-color: #999999;
-	background-position: -10px;
-	margin-top: -5px;
-	height: 35px;
-	line-height: 2em;
-
+	cursor: pointer;
 }
 
 h1.headline {

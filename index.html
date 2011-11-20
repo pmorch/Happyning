@@ -50,10 +50,24 @@
 				routes: {
 					"": "homePage",
 					"/selector": "selectorPage",
-					'/waiting': 'waitingPage'
+					'/waiting': 'waitingPage',
+					'/vintage': 'vintagePage'
 				},
 				homePage: function () {
 					selectPage('homePage');
+
+					$('.tools .vintage').click(function() {
+						$('.main-image').attr('src', 'img/Theme.Vintage.png').css('height', '342px').css('width', '979px');
+					});
+					$('.tools .rocker').click(function() {
+						$('.main-image').attr('src', 'img/main.png').css('height', '342px');
+					});
+					$('.tools .adventure').click(function() {
+						$('.main-image').attr('src', 'img/Theme.Adventure.png').css('height', '342px');
+					});
+				},
+				vintagePage: function () {
+					selectPage('vintagePage');
 				},
 				selectorPage: function () {
 					selectPage('selectorPage');
@@ -245,16 +259,16 @@ console.log("foo");
 				</nav>
 
 			<div id="homePage" class="page">			
-				<img src="img/main.png" />
+				<img class='main-image' src="img/main.png" />
 				<div class="tools" >
 					<span class="tooltipped">Vintage</span>
-					<span class="tooltipped">Rock star</span>
+					<span class="tooltipped rocker">Rock star</span>
 					<span class="tooltipped">Nature</span>
 					<span class="tooltipped">Girl night</span>
-					<span class="tooltipped">Adventure</span>
+					<span class="tooltipped adventure">Adventure</span>
 					<span class="tooltipped">Ecological</span>
-					<span class="tooltipped">Noughty</span>
-					<span class="tooltipped">Toataly wired</span>
+					<span class="tooltipped">Naughty</span>
+					<span class="tooltipped vintage">Vintage</span>
 					<span class="tooltipped">Budget</span>
 					<span class="tooltipped">Guide tour</span>
 				</div>
@@ -270,8 +284,8 @@ console.log("foo");
 					<span class="tooltipped">Girl night</span>
 					<span class="tooltipped">Adventure</span>
 					<span class="tooltipped">Ecological</span>
-					<span class="tooltipped">Noughty</span>
-					<span class="tooltipped">Toataly wired</span>
+					<span class="tooltipped">Naughty</span>
+					<span class="tooltipped">Vintage</span>
 					<span class="tooltipped">Budget</span>
 					<span class="tooltipped">Guide tour</span>
 				</div>
@@ -394,8 +408,8 @@ console.log("foo");
 					<span class="tooltipped">Girl night</span>
 					<span class="tooltipped">Adventure</span>
 					<span class="tooltipped">Ecological</span>
-					<span class="tooltipped">Noughty</span>
-					<span class="tooltipped">Toataly wired</span>
+					<span class="tooltipped">Naughty</span>
+					<span class="tooltipped">Vintage</span>
 					<span class="tooltipped">Budget</span>
 					<span class="tooltipped">Guide tour</span>
 				</div>
