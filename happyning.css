@@ -22,10 +22,8 @@ input, textarea {
 	margin-top: 24px;
 	float: left;
 	height: 30px;
-	width: 70px;
-	border: none;
-	overflow:hidden;
-	
+	width: 60px;
+	border: none;	
 }
 input:hover, input:focus {
 	border: none;
