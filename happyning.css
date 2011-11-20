@@ -117,8 +117,18 @@ nav p{
 	color:#fff;	
 }
 .tooltipped{
-	margin-left: 20px;
+	float: left;
+	display: block;
+	margin-left: 25px;
 	font-weight: bold;
+	height: 30px;
+}
+.tooltipped:hover{
+	background-color: #999999;
+	background-position: -10px;
+	margin-top: -5px;
+	height: 35px;
+
 }
 
 .lst {
@@ -145,4 +155,8 @@ nav p{
 	border-top: 1px solid #ccc;
 	margin-top: 15px;
 	padding-bottom: 10px;
+
+.choose{
+	float: left;
+	margin-left: 20px;
 }
