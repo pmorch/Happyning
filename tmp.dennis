@@ -143,6 +143,24 @@
 				</div>
 				<div style="clear:both"></div>
 			</div>
+			<div id="confirmPage" class="page">
+				<table class="center_table">
+					<tr><td width="350">Restaurant</td><td>DKK 1300</td></tr>
+					<tr><td width="350">Aktivitet</td><td>DKK 2200</td><tr>
+					<tr><td width="350">Rengøring</td><td>DKK 150</td><tr>
+					<tr><td width="350">Total</td><td><div class="confirm_total">DKK 3650</div></td><tr>
+				</table>
+				<div class="confirm_buttons"><div class="button" id="confirm_button">Bekræft</div> <div class="button" id="print_button">Udskriv</div></div>
+			</div>
+			<div id="paymentPage" class="page">
+				<h2>Betaling</h2>
+				<table class="center_table">
+					<tr><td width="350">Firmanavn</td><td><input type="text" name="payment_company_name" /></td></tr>
+					<tr><td width="350">Betalingsform</td><td><select name="payment_method"><option>VISA/Dankort</option><option>Mastercard</option></select></td></tr>
+					<tr><td width="350">Beløb</td><td><div class="payment_price">1234</div></td></tr>
+				</table>
+				<div class="payment_button">Betal</div>
+			</div>
 		</div>
 	</div>
 </body>
