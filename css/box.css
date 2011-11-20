@@ -3,6 +3,10 @@
 	background: none !important;
 }
 
+.close, .box, .tooltipped {
+	line-height: 2em;
+}
+
 .box.activity {
 	background-image: -webkit-linear-gradient(top, #00b2e3 12%, #0095cb 66%);
 	border: 1px solid #17A7CF;			
