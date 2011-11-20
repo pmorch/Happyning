@@ -22,10 +22,8 @@ input, textarea {
 	margin-top: 24px;
 	float: left;
 	height: 30px;
-	width: 70px;
-	border: none;
-	overflow:hidden;
-	
+	width: 60px;
+	border: none;	
 }
 input:hover, input:focus {
 	border: none;
@@ -39,22 +37,21 @@ input:hover, input:focus {
 .people{
   background-image: url('img/people.png');
  }
-.date{
+ .date{
   background-image: url('img/Calenda.png');
+  overflow: hidden;
  }
-.budget{
+ .budget{
   background-image: url('img/money.png');
  }
-.what{
+ .what{
   background-image: url('img/time.png');
+  width: 100px;
  }
-.where{
+ .where{
   background-image: url('img/place.png');
+  width: 100px;
  }
-.page {
-	display: none;
-}
-
 .page {
 	display: none;
 }
@@ -88,7 +85,7 @@ nav p{
 	float: left;
 	margin-top: 25px;
 	margin-left: 20px;
-	font-size: 25px;
+	font-size: 20px;
 	color: #cbcbcb;
 }
 .find img{
@@ -154,6 +151,7 @@ nav p{
 	background-position: -10px;
 	margin-top: -5px;
 	height: 35px;
+	line-height: 2em;
 
 }
 

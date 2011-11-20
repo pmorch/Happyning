@@ -36,7 +36,6 @@
 	<script type="text/javascript">
 		$(function () {
 			$("#date").datepicker($.datepicker.regional['da']);
-			$(".tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
 			var currentPage;
 			function selectPage(pageID) {
 				console.log("Changing to page: " + pageID);
@@ -169,6 +168,14 @@
 //					$('#waiting-timeline .box').each(function(i, el) {
 //						$(el).parent().css('top', parseInt($(el).parent().css('top')) - 150);
 //					});
+console.log("foo");
+					var counter = 0;
+					var arr = [ "0", "2", "2", "5", "5", "4", "4", "2", "2", "5", "5", "4", "4", "3","3","3" ];
+					$('.droparea').children().each( function(){
+					 $(this).append('<div class="offer">' + arr[counter] + '</div>');
+					 counter++;
+					});
+    
 				}
 			});
 			// Initiate the router
@@ -228,7 +235,7 @@
 					<p>Plan an event: </p>
 						<input class="people infield" type="text" name="many" id="many"  value="Attends" onclick="if (this.value !='') {this.value = '';}" /> 
 						<input class="what infield" type="text" name="what" id="what" value="What" onclick="if (this.value !='') {this.value = '';}" /> 
-						<input class="date infield" type="date" id="date" name="when" value="When?" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input class="date infield" type="text" id="date" name="when" value="When?" onclick="if (this.value !='') {this.value = '';}" /> 
 						<input class="budget infield" type="budget" id="budget" value="Budget?" name="budget"  onclick="if (this.value !='') {this.value = '';}"  /> 
 						<label for="where"></label><input class="where infield" id="autocomplete" value="Where?" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Find me</a>
 						<a href="#/selector" class="find" ><img src="img/find.png"></a>
@@ -237,23 +244,16 @@
 			<div id="homePage" class="page">			
 				<img src="img/main.png" />
 				<div class="tools" >
-				<p class="choose">Choose your style: </p>
 					<span class="tooltipped">Vintage</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Rock star</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Nature</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Girl night</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Adventure</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Ecological</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Noughty</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Toataly wired</span>
-					<div class="tooltip"></div>
+					<span class="tooltipped">Budget</span>
+					<span class="tooltipped">Guide tour</span>
 				</div>
 				
 			</div>
@@ -261,23 +261,16 @@
 			<div id="selectorPage" class="page">
 				<img src='img/main-cropped.png'>
 				<div class="tools" >
-				<p class="choose">Choose your style: </p>
 					<span class="tooltipped">Vintage</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Rock star</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Nature</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Girl night</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Adventure</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Ecological</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Noughty</span>
-					<div class="tooltip"></div>
 					<span class="tooltipped">Toataly wired</span>
-					<div class="tooltip"></div>
+					<span class="tooltipped">Budget</span>
+					<span class="tooltipped">Guide tour</span>
 				</div>
 
 				<script type='text/template' id='template-box'>
