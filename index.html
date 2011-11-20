@@ -73,19 +73,19 @@
 					selectPage('selectorPage');
 
 					$(function() {
-						['Bowling', 'Rodeo tyr', 'Paintball'].forEach(function(name) {
+						['Eventyr', 'Wellness', 'Sport'].forEach(function(name) {
 							$('.activities').append(template('#template-box', {style:'activity', name:name}));						
 						});
 
-						['Indisk', 'Italiensk', 'Fransk', 'Tysk'].forEach(function(name) {
+						['Buffet', 'A la Carte', 'Fastsat menu', 'Kanapéer'].forEach(function(name) {
 							$('.eatings').append(template('#template-box', {style:'eating', name:name}));						
 						});
 
-						['Bar', 'Natklub'].forEach(function(name) {
+						['DJ', 'Fri Bar'].forEach(function(name) {
 							$('.partys').append(template('#template-box', {style:'party', name:name}));						
 						});
 
-						['Rengøring', 'Bus', 'Catering'].forEach(function(name) {
+						['Transport', 'Rengøring', 'Tjenere'].forEach(function(name) {
 							$('.misc').append(template('#template-box', {style:'transport', name:name}));			
 						});
 						
@@ -310,37 +310,37 @@ console.log("foo");
 				<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 337px; width: 144px; left: 163px; display: none; ">
 					<div class="box activity">
 						<div class="icon"></div>
-						<div class="header">Bowling</div>
+						<div class="header">Aktivitet</div>
 						<div style="clear:both"></div>
 					</div>
 				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 337px; width: 160px; left: 493px; display: none; ">
 					<div class="box eating">
 						<div class="icon"></div>
-						<div class="header">Indisk</div>
+						<div class="header">Spisning</div>
 						<div style="clear:both"></div>
 					</div>
 				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 337px; width: 122px; left: 713px; display: none; ">
 					<div class="box party">
 						<div class="icon"></div>
-						<div class="header">Bar</div>
+						<div class="header">Fest</div>
 						<div style="clear:both"></div>
 					</div>
 				<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: relative; left: 18px; ">
 						<div class="box activity">
 							<div class="icon"></div>
-							<div class="header">Bowling</div>
+							<div class="header">Aktivitet</div>
 							<div style="clear:both"></div>
 						</div>
 					<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 368px; width: 171px; left: 501px; ">
 						<div class="box eating">
 							<div class="icon"></div>
-							<div class="header">Indisk</div>
+							<div class="header">Spisning</div>
 							<div style="clear:both"></div>
 						</div>
 					<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 368px; width: 87px; left: 715px; ">
 						<div class="box party">
 							<div class="icon"></div>
-							<div class="header">Bar</div>
+							<div class="header">Fest</div>
 							<div style="clear:both"></div>
 						</div>
 					<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div></div>				
@@ -369,16 +369,16 @@ console.log("foo");
 
 			<div class='headers'>
 				<div>
-					Activities:
+					Aktivitet:
 				</div>
 				<div>
-					Eating:
+					Spisning:
 				</div>
 				<div>
-					Staff:
+					Fest:
 				</div>
 				<div class='last'>
-					Venues:
+					Andet:
 				</div>
 
 			</div>
