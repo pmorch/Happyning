@@ -177,21 +177,54 @@ nav p{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.bids {
+	float: left;
+}
+.bid-con {
+	padding-bottom: 30px;
+	clear: both;
+	border-bottom: 1px solid #ddd;
+	width: 778px;
+	margin-bottom:15px;
+}
+.last .bid-con {
+	border-bottom: none;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+.bid-price, .bid-sup, .bid-rating {
+	float: left;
+}
+.bid-price {
+	color: #298BBC;
+}
+.bid-rating {
+	width: 150px;
+}
+.bid-sup {
+	font-weight: bold;
+	width: 200px;
+}
+.bid-sup a {
+	color: #298BBC;
+}
 .bid-cat {
 	width: 200px;
 	float: left;
 }
 .bid-name {
+	margin-bottom: 3px;
 	font-weight: bold;
 }
 .bid-time {
 	font-size: 11px;
 }
 .bid-table {
+	padding-top: 20px;
 	clear: both;
-	border-top: 1px solid #ccc;
+	border-top: 2px solid #ccc;
 	margin-top: 15px;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 .choose{
 	float: left;

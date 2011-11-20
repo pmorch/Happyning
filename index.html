@@ -93,13 +93,13 @@
 								{
 									'name' : "Thai Super",
 									'rating' : 4,
-									'price' : "kr. 10.000",
+									'price' : "10.000 kr.",
 									'url' : 'http://www.google.com',
 								},
 								{
 									'name' : "Flyvefisken",
 									'rating' : 3,
-									'price' : "kr. 12.000",
+									'price' : "12.000 kr.",
 									'url' : 'http://www.google.com',
 								}
 							]
@@ -111,13 +111,13 @@
 								{
 									'name' : "Go Cart Ballerup",
 									'rating' : 4,
-									'price' : "kr. 10.000",
+									'price' : "10.000 kr.",
 									'url' : 'http://www.google.com',
 								},
 								{
 									'name' : "Rodeo Bull",
 									'rating' : 2,
-									'price' : "kr. 12.000",
+									'price' : "12.000 kr.",
 									'url' : 'http://www.google.com',
 								}
 							]
@@ -129,13 +129,14 @@
 								{
 									'name' : "Go Cart Ballerup",
 									'rating' : 4,
-									'price' : "kr. 10.000",
+									'price' : "10.000 kr.",
 									'url' : 'http://www.google.com',
+									'demo':'demo'
 								},
 								{
 									'name' : "Rodeo Bull",
 									'rating' : 2,
-									'price' : "kr. 12.000",
+									'price' : "12.000 kr.",
 									'url' : 'http://www.google.com',
 								}
 							]
@@ -143,7 +144,26 @@
 					];
 
 					allBids.forEach(function(cat) {
-						$('#allBids').append(template('#bidTable', cat));
+						var el = $(template('#bidTable', cat));
+						var lst;
+
+						$('#allBids').append(el);
+
+
+						cat.bids.forEach(function(bid) {
+							$('.bids', el).append(lst = $(template('#bidRow', bid)));
+						});
+
+						if (lst) {
+							lst.addClass('last');
+						}
+					});
+
+					$('.bid-demo').append(template('#bid-rust', {}));
+
+					$('.bid-demo a').click(function() {
+						$('.bid-demo .bid-con').css('border', 'none');
+						$('.bid-demo .meme').animate({height:'180px'});					
 					});
 
 //					$('#waiting-timeline .box').each(function(i, el) {
@@ -370,41 +390,39 @@
 				<div class="tooltip"></div>
 			</div>
 			<div id='waiting-timeline' class='timeline'></div>
+			<script type='text/template' id='bid-rust'>
+				<div style='height:0px; overflow:hidden;' class='meme'>
+					<div style='height: 160px; border-bottom: 1px solid #ccc; width:760px;'>
+						<div style='float:left'>
+							<img src='img/2895.jpg' style='height:120px'>		
+						</div>
+						<div style='float:left; width:300px; padding-left:20px; color: #666;'>
+							Spectors er en håndgranat af electro og charmerende gaderap, og siden 2008 har de lagt københavnske klubber, fester og festivaler ned og efterladt publikum med granatsplinter i krop og sjæl. .
+						</div>
+						<div style='clear:both'></div>
+					</div>
+				</div>
+			</script>
 			<script type="text/template" id="bidTable">
 				<div class='bid-table'>
 					<div class='bid-cat'>
 						<div class='bid-name'>{category}</div>
 						<div class='bid-time'>{timeline}</div>
 					</div>
-					<div class='bid-rating'>
-					</div>
-					<div class='bid-sups'>
-					</div>
-					<div class='bid-price'>
-					</div>
+					<div class='bids'></div>
+					<div style='clear:both'></div>
 				</div>
 			</script>
 			<script type="text/template" id="bidRow">
-				<tr>
-					<td>{name}</td>
-					<td class="ratingTD">{rating}</td>
-					<td>{price}</td>
-					<td>
-						<img style="border=0" src="toggleBid.png" class="expandImg" id="expandImg{bidID}" onclick="toggleBid({bidID})"></img>
-					</td>
-					<td>{accept}</td>
-				</tr>
-				<tr id="bidDetails{bidID}" class="bidDetails">
-					<td colspan="5">Details for this bid</td>
-				</tr>
+				<div class='bid-{demo}'>
+					<div class='bid-con'>
+						<div class='bid-rating'><img src='img/ratings/rating{rating}.png'></div>
+						<div class='bid-sup'><a href='javascript:void(0);'>{name}</a></div>
+						<div class='bid-price'>{price}</div>
+					</div>
+				</div>
 			</script>
-			<script type="text/template" id="ratingTemplate">
-				<input name="{name}" type="radio" class="star"/>
-				<input name="{name}" type="radio" class="star"/>
-				<input name="{name}" type="radio" class="star"/>
-				<input name="{name}" type="radio" class="star"/>
-				<input name="{name}" type="radio" class="star"/>
-			</script>
+
 			<div id="allBids" id="innerContent"></div>
 
 		</div>
