@@ -149,6 +149,14 @@
 //					$('#waiting-timeline .box').each(function(i, el) {
 //						$(el).parent().css('top', parseInt($(el).parent().css('top')) - 150);
 //					});
+console.log("foo");
+					var counter = 0;
+					var arr = [ "0", "2", "2", "5", "5", "4", "4", "2", "2", "5", "5", "4", "4", "3","3","3" ];
+					$('.droparea').children().each( function(){
+					 $(this).append('<div class="offer">' + arr[counter] + '</div>');
+					 counter++;
+					});
+    
 				}
 			});
 			// Initiate the router
