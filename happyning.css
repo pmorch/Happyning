@@ -151,7 +151,18 @@ nav p{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.bid-cat {
+	width: 200px;
+	float: left;
+}
+.bid-name {
+	font-weight: bold;
+}
+.bid-time {
+	font-size: 11px;
+}
 .bid-table {
+	clear: both;
 	border-top: 1px solid #ccc;
 	margin-top: 15px;
 	padding-bottom: 10px;
