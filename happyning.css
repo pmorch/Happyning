@@ -69,7 +69,7 @@ body {
 	color: #383838 !important;
 }
 header{
-	height: 82px;
+	height: 87px;
 }
 header p{
 	padding-top: 30px;
@@ -93,7 +93,7 @@ nav p{
 }
 .find img{
 	margin-top: 15px;
-	margin-left: 18px;
+	margin-left: 25px;
 	
 }
 .locationButton{
@@ -125,12 +125,12 @@ nav p{
 .tools{
 	background-color: #cccccc;
 	color: #383838;
-	height: 30px;
+	height: 36px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	margin-top: -10px;
 	margin-left: 1px;
-	padding-top: 7px;
+	padding-top: 16px;
 }
 
 .tooltip {
@@ -151,7 +151,7 @@ nav p{
 	height: 30px;
 }
 .tooltipped:hover{
-	background-color: #999999;
+	color: #55adda;
 	cursor: pointer;
 }
 
