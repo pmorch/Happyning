@@ -118,6 +118,7 @@ nav p{
 	background-position: 50% 25%;
 	background-size: cover;
 }
+
 .tools{
 	background-color: #cccccc;
 	color: #383838;
@@ -142,12 +143,17 @@ nav p{
 .tooltipped{
 	float: left;
 	display: block;
+	margin-left: 25px;
 	font-weight: bold;
-	padding: 16px 16px;
+	height: 30px;
 }
-.tooltipped.checked, 
 .tooltipped:hover{
 	background-color: #999999;
+	background-position: -10px;
+	margin-top: -5px;
+	height: 35px;
+	line-height: 2em;
+
 }
 
 h1.headline {
