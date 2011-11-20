@@ -178,10 +178,6 @@ h1.headline {
 	display: none;
 }
 
-#waitingPage h1 {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
 .bids {
 	float: left;
 }
