@@ -94,12 +94,14 @@
 									'rating' : 4,
 									'price' : "10.000 kr.",
 									'url' : 'http://www.google.com',
+									'demo':'demo'
 								},
 								{
 									'name' : "Flyvefisken",
 									'rating' : 3,
 									'price' : "12.000 kr.",
 									'url' : 'http://www.google.com',
+
 								}
 							]
 						},
@@ -130,7 +132,6 @@
 									'rating' : 4,
 									'price' : "10.000 kr.",
 									'url' : 'http://www.google.com',
-									'demo':'demo'
 								},
 								{
 									'name' : "Rodeo Bull",
@@ -160,9 +161,12 @@
 
 					$('.bid-demo').append(template('#bid-rust', {}));
 
-					$('.bid-demo a').click(function() {
+					$('.bid-demo a.action-button').click(function() {
 						$('.bid-demo .bid-con').css('border', 'none');
 						$('.bid-demo .meme').animate({height:'180px'});					
+					});
+					$('.book-button').click(function() {
+						$('.book-button img').attr('src', 'img/valgt.png');
 					});
 
 //					$('#waiting-timeline .box').each(function(i, el) {
@@ -392,6 +396,9 @@ console.log("foo");
 						<div style='float:left; width:300px; padding-left:20px; color: #666;'>
 							Spectors er en håndgranat af electro og charmerende gaderap, og siden 2008 har de lagt københavnske klubber, fester og festivaler ned og efterladt publikum med granatsplinter i krop og sjæl. .
 						</div>
+						<div style='float:left; margin-left:30px'>
+							<a href='javascript:void(0);' class='book-button'><img src='img/bookit.png'></a>
+						</div>
 						<div style='clear:both'></div>
 					</div>
 				</div>
@@ -410,7 +417,7 @@ console.log("foo");
 				<div class='bid-{demo}'>
 					<div class='bid-con'>
 						<div class='bid-rating'><img src='img/ratings/rating{rating}.png'></div>
-						<div class='bid-sup'><a href='javascript:void(0);'>{name}</a></div>
+						<div class='bid-sup'><a class='action-button' href='javascript:void(0);'>{name}</a></div>
 						<div class='bid-price'>{price}</div>
 					</div>
 				</div>

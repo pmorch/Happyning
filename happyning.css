@@ -148,10 +148,6 @@ nav p{
 }
 .tooltipped:hover{
 	background-color: #999999;
-	background-position: -10px;
-	margin-top: -5px;
-	height: 35px;
-	line-height: 2em;
 
 }
 
