@@ -2,7 +2,7 @@
 	cursor: move;
 }
 .droparea{
-	width: 860px;
+	width: 836px;
 	height: 62px;
 	background: #F7F7F7;
 	float:left;
@@ -22,14 +22,15 @@
 }
 
 .timeline{
-	width: 1000px;
+	margin-top: 25px;
+	width: 976;
 	height: 140px;
 	border: 1px solid #cccccc;
 }
 .timepickerDiv{
 	width: 139px;
 	height: 100%;
-	background: f6f6f6;
+	background: #F7F7F7;
 	border-right: 1px solid #cccccc;
 	float:left;
 	background-image: url('../img/datePickerImg.png');
@@ -38,7 +39,7 @@
 }
 .timelineTime{
 	background-image: url('../timeline.png');
-	width: 860px;
+	width: 836px;
 	height: 16px;
 	float:left;
 }

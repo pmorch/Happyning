@@ -12,8 +12,12 @@
 	<script src='data.js'></script>
 	<script src='global.js'></script>
 	<script src="date_da.js"></script>
+	<script src="js/timeline.js"></script>
 	<link rel="stylesheet" type="text/css" href="jquery-ui/css/ui-darkness/jquery-ui-1.8.16.custom.css"/>
 	<link rel="stylesheet" type="text/css" href="happyning.css"/>
+	<link rel="stylesheet" type="text/css" href="css/timeline.css"/>
+	<link rel="stylesheet" type="text/css" href="css/box.css"/>
+
 	<script type="text/javascript">
 		$(function () {
 			$("#date").datepicker($.datepicker.regional['da']);
@@ -38,6 +42,28 @@
 				},
 				selectorPage: function () {
 					selectPage('selectorPage');
+
+					$(function() {
+						['Bowling', 'Rodeo tyr', 'Paintball'].forEach(function(name) {
+							$('.activities').append(template('#template-box', {style:'activity', name:name}));						
+						});
+
+						['Indisk', 'Italiensk', 'Fransk', 'Tysk'].forEach(function(name) {
+							$('.eatings').append(template('#template-box', {style:'eating', name:name}));						
+						});
+
+						['Bar', 'Natklub'].forEach(function(name) {
+							$('.partys').append(template('#template-box', {style:'party', name:name}));						
+						});
+
+						['Rengøring', 'Bus', 'Catering'].forEach(function(name) {
+							$('.misc').append(template('#template-box', {style:'transport', name:name}));			
+						});
+						
+						timeline.init();
+						timeline.update();
+					});
+
 				},
 			});
 			// Initiate the router
@@ -93,7 +119,6 @@
 				<a  href="#"><img src="img/logo.png" class="logo" /></a>
 				<p>Hello, Jacob!<a href="#"> (Sign out)</a></p>
 			</header>
-			<div id="homePage" class="page">			
 				<nav>
 					<p>Plan an event: </p>
 						<input class type="text" name="many" id="many"  value="Attends" onclick="if (this.value !='') {this.value = '';}" /> 
@@ -103,6 +128,8 @@
 						<label for="where"></label><input id="autocomplete" value="Where?" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Find me</a>
 						<a href="#/selector" class="find" ><img src="img/find.png"></a>
 				</nav>
+
+			<div id="homePage" class="page">			
 				<img src="img/main.png" />
 				<div class="tools" >
 					<span class="tooltipped">Vintage</span>
@@ -130,19 +157,90 @@
 			</div>
 			
 			<div id="selectorPage" class="page">
-				<h2>Second Page</h2>
-				<p>This is the Second Page</p>
-				<a href="#">Find </a>
-				<h3>Suppliers Overview</h3>
-				<script type='text/template' id='template-supplier'>
-					<div class='supplier'>
-						<div class='supplier-icon' style="background-image: url('{icon}');"></div>
-					</div>
-				</script>
-				<div id='overview'>
+				<img src='img/main-cropped.png'>
+				<div class="tools">
+					<span class="tooltipped">Vintage</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Rock star</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Nature</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Girl night</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Adventure</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Ecological</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Culinary trip</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Team bounding</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Noughty</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Toataly wired</span>
+					<div class="tooltip"></div>
 				</div>
+
+	<script type='text/template' id='template-box'>
+		<div class='dndable' draggable='true'>
+			<div class='box {style}'>
+				<div class='icon'></div>
+				<div class='header'>{name}</div>
+				<div style='clear:both'></div>
+			</div>
+		</div>
+	</script>
+
+	<div class="timeline">
+		<div class="timepickerDiv"></div>
+		<div class="droparea">
+
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 375px; width: 148px; left: 688px; ">
+			<div class="box party">
+				<div class="icon"></div>
+				<div class="header">Bar</div>
 				<div style="clear:both"></div>
 			</div>
+		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 375px; width: 123px; left: 484px; ">
+			<div class="box eating">
+				<div class="icon"></div>
+				<div class="header">Indisk</div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 375px; width: 126px; left: 165px; ">
+			<div class="box activity">
+				<div class="icon"></div>
+				<div class="header">Bowling</div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div>
+
+
+		</div>
+		<div class="droparea">
+
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" style="position: relative; " class="ui-draggable ui-droppable ui-resizable"></meta><div id="draggable" class="ui-widget-content ui-draggable droppedItem ui-droppable ui-resizable" style="position: absolute; top: 437px; left: 277px; width: 413px; ">
+			<div class="box transport">
+				<div class="icon"></div>
+				<div class="header">Bus</div>
+				<div style="clear:both"></div>
+			</div>
+		<div class="close">x</div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-w"></div></div>
+
+
+		</div>
+		<div class="timelineTime"></div>
+	</div>
+	
+	<br>
+
+	<div class='lst activities'></div>
+	<div class='lst eatings'></div>
+	<div class='lst partys'></div>
+	<div class='lst misc'></div>
+
+
+			</div>	
 		</div>
 	</div>
 </body>

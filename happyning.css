@@ -120,3 +120,16 @@ nav p{
 	margin-left: 20px;
 	font-weight: bold;
 }
+
+.lst {
+	margin-right: 20px;
+	float: left;
+	width: 229px;
+}
+.lst > div {
+	margin: 10px 0;
+}
+
+.misc {
+	margin-right: 0;
+}
