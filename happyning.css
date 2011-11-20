@@ -77,8 +77,8 @@ header a{
 nav{
 	height: 76px;
 	background-color: #000000;
-	border-top-left-radius: 20px 15px;
-	border-top-right-radius: 20px 15px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 } 
 nav p{
 	float: left;
