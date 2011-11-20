@@ -136,3 +136,13 @@ nav p{
 .bidDetails {
 	display: none;
 }
+
+#waitingPage h1 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.bid-table {
+	border-top: 1px solid #ccc;
+	margin-top: 15px;
+	padding-bottom: 10px;
+}

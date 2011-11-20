@@ -85,6 +85,67 @@
 				
 					$('#waiting-timeline').html($('#select-timeline').html());	
 
+					var allBids = [
+						{
+							'category' : 'Bowling',
+							'timeline': '16:00 - 19:30',
+							'bids' : [
+								{
+									'name' : "Thai Super",
+									'rating' : 4,
+									'price' : "kr. 10.000",
+									'url' : 'http://www.google.com',
+								},
+								{
+									'name' : "Flyvefisken",
+									'rating' : 3,
+									'price' : "kr. 12.000",
+									'url' : 'http://www.google.com',
+								}
+							]
+						},
+						{
+							'category' : 'Eating',
+							'timeline': '20:00 - 23:00',
+							'bids' : [
+								{
+									'name' : "Go Cart Ballerup",
+									'rating' : 4,
+									'price' : "kr. 10.000",
+									'url' : 'http://www.google.com',
+								},
+								{
+									'name' : "Rodeo Bull",
+									'rating' : 2,
+									'price' : "kr. 12.000",
+									'url' : 'http://www.google.com',
+								}
+							]
+						},
+						{
+							'category' : 'Party',
+							'timeline': '23:30 - 6:00',
+							'bids' : [
+								{
+									'name' : "Go Cart Ballerup",
+									'rating' : 4,
+									'price' : "kr. 10.000",
+									'url' : 'http://www.google.com',
+								},
+								{
+									'name' : "Rodeo Bull",
+									'rating' : 2,
+									'price' : "kr. 12.000",
+									'url' : 'http://www.google.com',
+								}
+							]
+						}
+					];
+
+					allBids.forEach(function(cat) {
+						$('#allBids').append(template('#bidTable', cat));
+					});
+
 //					$('#waiting-timeline .box').each(function(i, el) {
 //						$(el).parent().css('top', parseInt($(el).parent().css('top')) - 150);
 //					});
@@ -132,67 +193,7 @@
 			SUPPLIERS.forEach(function(supplier) {
 				$('#overview').append(template('#template-supplier', supplier));
 			});
-			var allBids = [
-				{
-					'category' : 'Thai Restaurant',
-					'bids' : [
-						{
-							'name' : "Thai Super",
-							'rating' : 4,
-							'price' : "kr. 10.000",
-							'url' : 'http://www.google.com',
-						},
-						{
-							'name' : "Flyvefisken",
-							'rating' : 3,
-							'price' : "kr. 12.000",
-							'url' : 'http://www.google.com',
-						}
-					]
-				},
-				{
-					'category' : 'Aktiviteter',
-					'bids' : [
-						{
-							'name' : "Go Cart Ballerup",
-							'rating' : 4,
-							'price' : "kr. 10.000",
-							'url' : 'http://www.google.com',
-						},
-						{
-							'name' : "Rodeo Bull",
-							'rating' : 2,
-							'price' : "kr. 12.000",
-							'url' : 'http://www.google.com',
-						}
-					]
-				},
 
-			];
-			var allBidsStr = '';
-			var bidNr=0;
-			allBids.forEach(function(category) {
-				var rows = '';
-				category.bids.forEach(function (bid) {
-					bid.bidID = bidNr;
-					rows += template('#bidRow', bid);
-					bidNr++;
-				});
-				allBidsStr += template('#bidTable', {
-					'category' : category.category,
-					'rows' : rows
-				});
-			});
-			$('#allBids').html(allBidsStr);
-			console.log("hello");
-			$('.ratingTD').each(function(index, td) {
-				var $td = $(td);
-				var rating = $td.text();
-				var ratingName = 'ratingNr' + index;
-				$td.html(template('#ratingTemplate', { 'name' : ratingName }));
-				$("input.star[name='" + ratingName + "']")
-					.rating().rating('select', parseInt(rating)).rating('disable');
-			});
 		});
 	</script>
 </head>
@@ -375,12 +376,19 @@
 				<div class="tooltip"></div>
 			</div>
 			<div id='waiting-timeline' class='timeline'></div>
-			<h1>Bud</h1>	
 			<script type="text/template" id="bidTable">
-				<h2>{category}</h2>
-				<table>
-				{rows}
-				</table>
+				<div class='bid-table'>
+					<div class='bid-cat'>
+						<div class='bid-name'>{category}</div>
+						<div class='bid-time'>{timeline}</div>
+					</div>
+					<div class='bid-rating'>
+					</div>
+					<div class='bid-sups'>
+					</div>
+					<div class='bid-price'>
+					</div>
+				</div>
 			</script>
 			<script type="text/template" id="bidRow">
 				<tr>
