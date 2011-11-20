@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Happyning</title>
+	<script src="jquery-1.7.min.js"></script>
+	<script src="json2.js"></script>
+	<script src="underscore-min.js"></script>
+	<script src="backbone-min.js"></script>
+	<script src="jquery.tools.min.js"></script>
+	<script src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script src='data.js'></script>
+	<script src='global.js'></script>
+	<script src="date_da.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery-ui/css/ui-darkness/jquery-ui-1.8.16.custom.css"/>
+	<link rel="stylesheet" type="text/css" href="happyning.css"/>
+	<script type="text/javascript">
+		$(function () {
+			$("#date").datepicker($.datepicker.regional['da']);
+			$(".tooltipped").tooltip({ effect: 'slide', position: 'bottom center'});
+			var currentPage;
+			function selectPage(pageID) {
+				console.log("Changing to page: " + pageID);
+				if (currentPage !== undefined) {
+					currentPage.hide();
+				}
+				var page = $('#' + pageID);
+				page.show();
+				currentPage=page;
+			}
+			var AppRouter = Backbone.Router.extend({
+				routes: {
+					"": "homePage",
+					"/selector": "selectorPage"
+				},
+				homePage: function () {
+					selectPage('homePage');
+				},
+				selectorPage: function () {
+					selectPage('selectorPage');
+				},
+			});
+			// Initiate the router
+			var app_router = new AppRouter;
+			// Start Backbone history a neccesary step for bookmarkable URL's
+			Backbone.history.start();
 
+			$("#location_button").click(function() {
+				// Show spinner...
+				$("#location_button").html("<img src='spinner.gif' height=20 border=0 />");
+				setTimeout(function() {
+					$("#location_button").text("Get location");
+					$("#autocomplete").attr("value", "Howitzvej 60 1., 2000 Frederiksberg");
+				}, 2500);
+			});
+
+			$("input#autocomplete").autocomplete({
+				source: [
+					"Albertslund",
+					"Østerbro",
+					"Vesterbro",
+					"København K",
+					"Brønshøj",
+					"Frederiskberg",
+					"Lyngby"
+				]
+			});
+			$("input#what").autocomplete({
+				source: [
+					"Fødselsdag",
+					"Middagsselskab",
+					"Teselskab",
+					"Julefrokost",
+					"Reception",
+					"Kostumebal",
+					"Firmafest",
+					"Surprise party",
+					"Svendegilde",
+					"Indflytterfest"
+				]
+			});
+			SUPPLIERS.forEach(function(supplier) {
+				$('#overview').append(template('#template-supplier', supplier));
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div class="innerContent">
+			<header>
+				<a  href="#"><img src="img/logo.png" class="logo" /></a>
+				<p>Hello, Jacob!<a href="#"> (Sign out)</a></p>
+			</header>
+			<div id="homePage" class="page">			
+				<nav>
+					<p>Planlæg: </p>
+						<input class type="text" name="many" id="many"  value="Antal deltagere" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input type="text" name="what" id="what" value="Arrangement" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input type="date" id="date" name="when" value="Hvornår?" onclick="if (this.value !='') {this.value = '';}" /> 
+						<input type="budget" id="budget" value="Pris?" name="budget"  onclick="if (this.value !='') {this.value = '';}"  /> 
+						<label for="where"></label><input id="autocomplete" value="Hvor?" onclick="if (this.value !='') {this.value = '';}" /><a class="locationButton" href="#" id="location_button">Placering</a>
+						<a href="#/selector" class="find" ><img src="img/find.png"></a>
+				</nav>
+				<img src="img/main.png" />
+				<div class="tools" >
+					<span class="tooltipped">Vintage</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Rock star</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Natur</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Pigeaften</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Adventure</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Ecological</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Kulinarisk udflugt</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Team building</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Naughty</span>
+					<div class="tooltip"></div>
+					<span class="tooltipped">Sindssygt</span>
+					<div class="tooltip"></div>
+				</div>
+				
+			</div>
+			
+			<div id="selectorPage" class="page">
+				<h2>Second Page</h2>
+				<p>This is the Second Page</p>
+				<a href="#">Find </a>
+				<h3>Suppliers Overview</h3>
+				<script type='text/template' id='template-supplier'>
+					<div class='supplier'>
+						<div class='supplier-icon' style="background-image: url('{icon}');"></div>
+					</div>
+				</script>
+				<div id='overview'>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
