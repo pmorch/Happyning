@@ -16,17 +16,44 @@ a {
 input, textarea {
 	background: #ffffff;
 	color: #9a9a9c;
-	font-size: 1em;
+	font-size: 12px;
 	font-family:  Arial, Helvetica, sans-serif;
-	border-radius: 10px 5px;
+	border-radius: 10px 10px;
 	margin-left: 10px;
 	margin-top: 24px;
 	float: left;
 	height: 30px;
-	width: 80px;
+	width: 70px;
+	border: none;
+	overflow:hidden;
+	
 }
-input:hover, input:click {
-	border-color: #000000;
+input:hover, input:focus {
+	border: none;
+	outline: none;
+}
+.infield{
+  background-position: 3px, 0px, 0px, 0px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+.people{
+  background-image: url('img/people.png');
+ }
+.date{
+  background-image: url('img/Calenda.png');
+ }
+.budget{
+  background-image: url('img/money.png');
+ }
+.what{
+  background-image: url('img/time.png');
+ }
+.where{
+  background-image: url('img/place.png');
+ }
+.page {
+	display: none;
 }
 
 .page {
