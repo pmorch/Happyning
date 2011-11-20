@@ -151,6 +151,12 @@ nav p{
 
 }
 
+h1.headline {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: #ccc;
+}
+
 .lst {
 	margin-right: 20px;
 	float: left;
