@@ -207,16 +207,16 @@ console.log("foo");
 			});
 			$("input#what").autocomplete({
 				source: [
-					"Birthday party",
-					"Dinner party",
-					"Tea party",
-					"Christmas caroling party",
+					"Fødselsdag",
+					"Middagsselskab",
+					"Teselskab",
+					"Julefrokost",
 					"Reception",
-					"Costume or fancy dress party",
-					"Company party",
+					"Kostumebal",
+					"Firmafest",
 					"Surprise party",
-					"Graduation party",
-					"Housewarming party"
+					"Svendegilde",
+					"Indflytterfest"
 				]
 			});
 			SUPPLIERS.forEach(function(supplier) {
@@ -231,15 +231,15 @@ console.log("foo");
 		<div class="innerContent">
 			<header>
 				<a  href="#"><img src="img/logo.png" class="logo" /></a>
-				<p>Hello, Jacob!<a href="#"> (Sign out)</a></p>
+				<p>Hej, Jacob!<a href="#"> (Log ud)</a></p>
 			</header>
 				<nav>
-					<p>Plan an event: </p>
-						<input class="people infield" type="text" name="many" id="many"  value="Attends" onclick="if (this.value !='') {this.value = '';}" /> 
-						<input class="what infield" type="text" name="what" id="what" value="What" onclick="if (this.value !='') {this.value = '';}" /> 
-						<input class="date infield" type="text" id="date" name="when" value="When?" onclick="if (this.value !='') {this.value = '';}" /> 
-						<input class="budget infield" type="budget" id="budget" value="Budget?" name="budget"  onclick="if (this.value !='') {this.value = '';}"  /> 
-						<label for="where"></label><input class="where infield" id="autocomplete" value="Where?" onclick="if (this.value !='') {this.value = '';}" />
+					<p>Planlæg et event: </p>
+						<input class="people infield" type="text" name="many" id="many"  placeholder="Antal" /> 
+						<input class="what infield" type="text" name="what" id="what" placeholder="Hvad"/> 
+						<input class="date infield" type="text" id="date" name="when" placeholder="Hvornår?"/> 
+						<input class="budget infield" type="budget" id="budget" placeholder="Budget?"/> 
+						<label for="where"></label><input class="where infield" id="autocomplete" placeholder="Hvor?"/>
 						<a href="#/selector" class="find" ><img src="img/find.png"></a>
 				</nav>
 
