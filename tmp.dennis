@@ -91,7 +91,7 @@
 		<div class="innerContent">
 			<header>
 				<a  href="#"><img src="img/logo.png" class="logo" /></a>
-				<p>Hello, Jacob!<a href="#"> (Sign out)</a></p>
+				<p>Hej Jacob!<a href="#"> (Log ud)</a></p>
 			</header>
 			<div id="homePage" class="page">			
 				<nav>
